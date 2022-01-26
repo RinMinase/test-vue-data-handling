@@ -7,25 +7,22 @@
 
 <script>
 export default {
-  props: [ "evt" ],
+  props: ["evt"],
 
   data() {
     return {
       value: 1,
-    }
+    };
   },
 
   methods: {
     changeValue(value) {
-      this.value = (value) ? value : 10;
-    }
+      this.value = value ? value : 10;
+    },
   },
 
   mounted() {
-    this.evt.$on(
-      "change-value", 
-      (val) => this.changeValue(val)
-    );
-  }
+    this.evt.$on("change-value", (val) => this.changeValue(val));
+  },
 };
 </script>

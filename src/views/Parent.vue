@@ -2,10 +2,7 @@
   <div>
     <Child :evt="evt" class="mb-3" />
 
-    <button
-      class="mb-3" 
-      @click="changeChildValue"
-    >
+    <button class="mb-3" @click="changeChildValue">
       Change Value
     </button>
   </div>
@@ -29,7 +26,7 @@ export default {
   methods: {
     changeChildValue() {
       this.evt.$emit("change-value", 50);
-    }
-  }
-}
+    },
+  },
+};
 </script>

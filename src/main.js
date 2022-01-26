@@ -1,10 +1,24 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.config.productionTip = false
+import App from "./App.vue";
+
+import Parent from './views/Parent.vue'
+
+Vue.config.productionTip = false;
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  routes: [
+    {
+      path: "/",
+      name: "Home",
+      component: Parent,
+    },
+  ],
+});
 
 new Vue({
   router,
-  render: h => h(App)
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");

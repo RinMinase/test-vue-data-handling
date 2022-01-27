@@ -1,6 +1,12 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div>
+    <div class="center">
+      <a href="/">Using Emit</a> |
+      <a href="/refs">Using Refs</a>
+    </div>
+    <div id="app">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -11,6 +17,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.center {
+  text-align: center;
 }
 
 .mb-3 {

@@ -3,17 +3,25 @@ import VueRouter from "vue-router";
 
 import App from "./App.vue";
 
-import Parent from './views/Parent.vue'
+import { default as Emit } from './views/emit/Parent.vue'
+import { default as Refs } from './views/refs/Parent.vue'
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 
 const router = new VueRouter({
+	mode: "history",
+	base: process.env.BASE_URL,
   routes: [
     {
       path: "/",
-      name: "Home",
-      component: Parent,
+      name: "Emit",
+      component: Emit,
+    },
+    {
+      path: "/refs",
+      name: "Refs",
+      component: Refs,
     },
   ],
 });

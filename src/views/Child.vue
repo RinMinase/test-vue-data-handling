@@ -1,28 +1,22 @@
 <template>
   <div>
-    <span class="pr-2">Value:</span>
-    <span>{{ value }}</span>
+    <div>
+      <span class="pr-2">Value:</span>
+      <span>{{ value }}</span>
+    </div>
+    <button @click="changeValue">Change Value</button>  
   </div>
 </template>
 
 <script>
 export default {
-  props: ["evt"],
-
-  data() {
-    return {
-      value: 1,
-    };
-  },
+  props: ["value"],
 
   methods: {
-    changeValue(value) {
-      this.value = value ? value : 10;
+    changeValue() {
+      const randomNumber = +(Math.random() * 10) + 1;
+      this.$emit("update-value", randomNumber)
     },
-  },
-
-  mounted() {
-    this.evt.$on("change-value", (val) => this.changeValue(val));
   },
 };
 </script>

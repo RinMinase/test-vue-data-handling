@@ -1,31 +1,25 @@
 <template>
   <div>
-    <Child :evt="evt" class="mb-3" />
-
-    <button class="mb-3" @click="changeChildValue">
-      Change Value
-    </button>
+    <Child :value="value" class="mb-3" />
+    <Child @update-value="update" :value="value" class="mb-3" />
   </div>
 </template>
 
 <script>
-import Vue from "vue";
 import Child from "./Child.vue";
 
 export default {
-  components: {
-    Child,
-  },
+  components: { Child },
 
   data() {
     return {
-      evt: new Vue(),
+      value: 1
     };
   },
 
   methods: {
-    changeChildValue() {
-      this.evt.$emit("change-value", 50);
+    update(value) {
+      this.value = value
     },
   },
 };
